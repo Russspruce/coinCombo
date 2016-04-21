@@ -2,7 +2,6 @@ public class Coin {
 
   public String runCoin(Integer inputCent) {
 
-    // Integer change = 0;
     Integer quarter = 0;
     Integer dime = 0;
     Integer nickel = 0;
@@ -12,77 +11,33 @@ public class Coin {
     while (inputCent / 25 >= 1) {
       inputCent -= 25;
       quarter++;
-      // exchange = quarter.toString() + " quarter(s)"
     }
+    if (quarter != 0) {
+      exchange = quarter.toString() + " quarter(s) ";
+    }
+
     while (inputCent / 10 >= 1) {
       inputCent -= 10;
       dime++;
+    }
+    if (dime != 0) {
+      exchange += dime.toString() + " dime(s) ";
     }
     while (inputCent / 5 >= 1) {
       inputCent -= 5;
       nickel++;
     }
+    if (nickel != 0) {
+      exchange += nickel.toString() + " nickel(s) ";
+    }
     while (inputCent / 1 >= 1) {
       inputCent -= 1;
       penny++;
     }
+    if (penny != 0) {
+      exchange += penny.toString() + " penny(s)";
+    }
 
-    return exchange = String.format("%d Quarter(s), %d Dime(s), %d Nickel(s) and %d Penny(s)", quarter, dime, nickel, penny);
-  //   while (inputCent != 0) {
-   //
-  //     if (inputCent >= 5) {
-  //      inputCent -= 5;
-  //      nickel++;
-   //
-  //      change += nickel;
-  //     }
-  //
-  //     else if (inputCent >= 1) {
-  //      inputCent -= 1;
-  //      penny++;
-   //
-  //      change += penny;
-  //   }
-  //  }
-  //  return change;
+    return exchange;
  }
 }
-
-
-
-
-// public class Coin {
-//
-//   public String runCoin(String inputCent) {
-//     String input = inputCent;
-//     Integer change = 0;
-//     Integer nickel = 0;
-//     Integer penny = 0;
-//
-//     while (inputCent > 0) {
-//
-//       if (inputCent >= 5) {
-//        inputCent -= 5;
-//        nickel++;
-//
-//        change += nickel;
-//
-//
-//       }
-//       else if (inputCent >= 1) {
-//        inputCent -= 1;
-//
-//        penny++;
-//
-//       change += penny;
-//     }
-//   }
-//   String returnValue = "works";
-//   if (input==returnValue){
-//   }
-//   else {
-//     returnValue = "no";
-//   }
-//   return returnValue;
-//  }
-// }
